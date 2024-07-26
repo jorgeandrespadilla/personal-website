@@ -1,0 +1,24 @@
+---
+import ActionArrow from "../icons/ActionArrow.astro";
+import type { Props } from "./props";
+
+const { title, link, cursorMotion = true, newTab = false } = Astro.props;
+---
+
+<a
+  data-ccursor={cursorMotion}
+  class="text-sm inline-flex items-center leading-tight text-neutral-200 font-semibold group rounded px-4 py-2 bg-slate-500 bg-opacity-10 border border-slate-500 border-opacity-50 hover:bg-opacity-20 hover:border-opacity-100 hi"
+  aria-label={title}
+  target={newTab ? "_blank" : "_self"}
+  rel={newTab ? "noreferrer noopener" : ""}
+  href={link}
+>
+  <span>
+    <span class="whitespace-nowrap">
+      <span class="border-b border-transparent pb-px transition motion-reduce:transition-none">
+        {title}
+      </span>
+      <ActionArrow />
+    </span>
+  </span>
+</a>
