@@ -1,4 +1,7 @@
-# Personal Website
+<div align="center">
+  <img src="preview.jpeg" alt="AV Tools" style="max-width:80%;">
+  <h2 align="center">Personal Website</h1>
+</div>
 
 ## 🚀 Quick start
 
