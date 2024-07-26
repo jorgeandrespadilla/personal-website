@@ -9,6 +9,7 @@ import { SOCIALS } from "../data/socials";
 import { HIGHLIGHTS } from "../data/highlights";
 
 import Layout from "../layouts/Layout.astro";
+import Footer from "../sections/Footer.astro";
 ---
 
 <Layout title="Jorge Andrés Padilla">
@@ -152,9 +153,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 
-  <footer class="text-center py-4 text-xs">
-    {new Date().getFullYear()} All rights reserved.
-  </footer>
+  <Footer />
 </Layout>
 
 <style scoped>
