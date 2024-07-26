@@ -4,7 +4,7 @@ export const HIGHLIGHTS: HighlightProp[] = [
     {
         title: "Artificial Intelligence",
         description: "Shaping the future with Machine Learning & Generative AI.",
-        actionButton: "Read More",
+        actionButton: "See More",
         actionButtonLink: "/ai",
     },
     {
