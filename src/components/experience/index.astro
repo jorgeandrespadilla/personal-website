@@ -1,5 +1,6 @@
 ---
 import type { Props } from "./props";
+import { cn } from "@/utils/cn";
 import IconArrow from "../icons/arrow.astro";
 
 const { dates, title, company, companyUrl, description, technologies, logo } =
@@ -8,10 +9,10 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
 
 <li>
   <div
-    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 hover:backdrop-blur-sm duration-500"
+    class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 hover:backdrop-blur-sm duration-500"
   >
     <div
-      class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-neutral-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"
+      class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block"
     >
     </div>
     <header
@@ -24,14 +25,14 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
       <h3 class="font-medium leading-snug text-neutral-200">
         <div>
           <a
-            class="inline-flex items-baseline font-medium leading-tight text-neutral-200 hover:text-neutral-300 focus-visible:text-neutral-300 group/link text-base"
+            class={cn("inline-flex items-baseline font-medium leading-tight text-neutral-200 text-base", companyUrl && `hover:text-neutral-300 focus-visible:text-neutral-300 group/link`)}
             href={companyUrl}
             target="_blank"
             rel="noreferrer"
             aria-label={title}
           >
             <span
-              class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"
+              class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4"
             ></span>
             <div class="flex gap-x-2 items-center">
               {
@@ -47,16 +48,24 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
                 >{title} ·
                 <span class="inline-block">
                   {company}
-                  <IconArrow />
+                  {
+                    companyUrl && (
+                      <IconArrow />
+                    )
+                  }
                 </span>
               </span>
             </div>
           </a>
         </div>
       </h3>
-      <p class="mt-2 text-sm leading-normal">
-        {description}
-      </p>
+      {
+        description && (
+          <p class="mt-2 text-sm leading-normal">
+            {description}
+          </p>
+        )
+      }
       {
         technologies.length && (
           <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
