@@ -3,8 +3,7 @@ import type { Props } from "./props";
 import { cn } from "@/lib/utils";
 import IconArrow from "../icons/LinkArrow.astro";
 
-const { dates, title, company, companyUrl, description, technologies, logo } =
-  Astro.props;
+const { title, dates, company, link, description, logo, tags = [] } = Astro.props;
 ---
 
 <li>
@@ -25,8 +24,8 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
       <h3 class="font-medium leading-snug text-neutral-200">
         <div>
           <a
-            class={cn("inline-flex items-baseline font-medium leading-tight text-neutral-200 text-base", companyUrl && `hover:text-neutral-300 focus-visible:text-neutral-300 group/link`)}
-            href={companyUrl}
+            class={cn("inline-flex items-baseline font-medium leading-tight text-neutral-200 text-base", link && `hover:text-neutral-300 focus-visible:text-neutral-300 group/link`)}
+            href={link}
             target="_blank"
             rel="noreferrer"
             aria-label={title}
@@ -49,7 +48,7 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
                 <span class="inline-block">
                   {company}
                   {
-                    companyUrl && (
+                    link && (
                       <IconArrow />
                     )
                   }
@@ -67,9 +66,9 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
         )
       }
       {
-        technologies.length && (
+        tags.length > 0 && (
           <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
-            {technologies.map((technology) => (
+            {tags.map((technology) => (
               <li class="mr-1.5 mt-2">
                 <div class="flex items-center backdrop-blur-sm rounded-full border border-neutral-700 border-opacity-50 shadow bg-neutral-400/10 px-3 py-1 text-xs font-medium leading-5 text-neutral-300">
                   {technology}

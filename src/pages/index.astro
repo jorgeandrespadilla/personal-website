@@ -1,7 +1,7 @@
 ---
-import ActionButton from "@/components/action-button/index.astro";
 import Component from "../components/Component.astro";
-import Experience from "../components/experience/index.astro";
+import ActionButton from "@/components/action-button/index.astro";
+import Milestone from "../components/milestone/index.astro";
 import Card from "../components/card/index.astro";
 
 import { EXPERIENCE } from "../data/experience";
@@ -125,7 +125,7 @@ import Footer from "../sections/Footer.astro";
             </div>
             <div>
               <ol class="group/list space-y-12">
-                {EXPERIENCE.map((experience) => <Experience {...experience} />)}
+                {EXPERIENCE.map((experience) => <Milestone {...experience} />)}
               </ol>
 
               <div class="mt-12">
