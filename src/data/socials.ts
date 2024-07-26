@@ -1,6 +1,6 @@
-import IconGithub from "../components/icons/github.astro";
-import IconLinkedin from "../components/icons/linkedin.astro";
-import IconX from "../components/icons/x.astro";
+import IconGithub from "../components/icons/GitHub.astro";
+import IconLinkedin from "../components/icons/LinkedIn.astro";
+import IconX from "../components/icons/X.astro";
 
 export const SOCIALS = [
   {
